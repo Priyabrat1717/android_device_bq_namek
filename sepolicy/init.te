@@ -1,0 +1,9 @@
+allow init self:process execmem;
+allow init self:tcp_socket { create setopt bind listen };
+allow init node:tcp_socket node_bind;
+allow init debugfs:dir mounton;
+allow init property_socket:sock_file write;
+allow init qmuxd:unix_stream_socket connectto;
+allow init qmuxd_socket:sock_file write;
+
+allow init system_data_file:fifo_file write;
