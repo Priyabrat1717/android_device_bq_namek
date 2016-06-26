@@ -32,8 +32,6 @@
 /dev/ion                  0664   system     system
 /dev/rtc0                 0600   system     system
 /dev/smd0                 0660   system     system
-/dev/smd4                 0660   system     system
-/dev/smd_cxm_qmi          0640   radio      radio
 /dev/smd5                 0660   system     system
 /dev/smd6                 0660   system     system
 /dev/smd7                 0660   bluetooth  bluetooth
@@ -63,7 +61,6 @@
 /dev/smdcnt_rev6          0640   radio      radio
 /dev/smdcnt_rev7          0640   radio      radio
 /dev/smdcnt_rev8          0640   radio      radio
-/dev/rmnet_mux_ctrl       0640   radio      radio
 /dev/video*               0660   system     camera
 /dev/media*               0660   system     camera
 /dev/v4l-subdev*          0660   system     camera
@@ -80,14 +77,12 @@
 /dev/msm_amrwb            0660   system     audio
 /dev/msm_amrwbplus        0660   system     audio
 /dev/msm_aac              0660   system     audio
-/dev/msm_multi_aac        0660   system     audio
 /dev/msm_aac_in           0660   system     audio
 /dev/msm_qcelp_in         0660   system     audio
 /dev/msm_evrc_in          0660   system     audio
 /dev/msm_amrnb_in         0640   system     audio
 /dev/msm_audio_cal        0660   system     audio
 /dev/msm_rtac             0660   system     audio
-/dev/radio0               0640   fm_radio   fm_radio
 /dev/smd3                 0660   bluetooth  net_bt_stack
 /dev/smd2                 0660   bluetooth  net_bt_stack
 /dev/i2c-5                0660   media      media
@@ -96,37 +91,11 @@
 
 /sys/devices/virtual/smdpkt/smdcntl*       open_timeout   0664 radio radio
 
-# Sensors
-/sys/devices/i2c-12/12-*  pollrate_ms 0664 system system
-/sys/devices/f9925000.i2c/i2c-0/0-*                 enable         0660    input    system
-/sys/devices/f9925000.i2c/i2c-0/0-*                 poll_delay     0660    input    system
-/sys/devices/soc.0/78b6000.i2c/i2c-0/0-*            enable         0660    input    system
-/sys/devices/soc.0/78b6000.i2c/i2c-0/0-*            poll_delay     0660    input    system
-/sys/devices/soc.0/78b6000.i2c/i2c-0/0-*            enable_wakeup  0660    input    system
-/sys/devices/soc.0/78b6000.i2c/i2c-0/0-*            max_latency    0660    input    system
-/sys/devices/soc.0/78b6000.i2c/i2c-0/0-*            flush          0660    input    system
-/sys/devices/soc.0/78b6000.i2c/i2c-0/0-*            calibrate      0660    input    system
-/sys/devices/soc.0/78b5000.i2c/i2c-1/1-*            enable         0660    input    system
-/sys/devices/soc.0/78b5000.i2c/i2c-1/1-*            poll_delay     0660    input    system
-/sys/devices/soc.0/78b5000.i2c/i2c-1/1-*            enable_wakeup  0660    input    system
-/sys/devices/soc.0/78b5000.i2c/i2c-1/1-*            max_latency    0660    input    system
-/sys/devices/soc.0/78b5000.i2c/i2c-1/1-*            flush          0660    input    system
-/sys/devices/soc.0/78b5000.i2c/i2c-1/1-*            calibrate      0660    input    system
-/sys/devices/virtual/optical_sensors/proximity      ps_adc         0660    input    system
-/sys/devices/virtual/optical_sensors/proximity      ps_poll_delay  0660    input    system
-/sys/devices/virtual/optical_sensors/lightsensor    ls_auto        0660    input    system
-/sys/devices/virtual/optical_sensors/lightsensor    ls_poll_delay  0660    input    system
-/sys/devices/virtual/input/input*                   poll           0660    input    system
-/sys/devices/virtual/input/input*                   pollrate_ms    0660    input    system
-/sys/devices/soc.0/78b9000.i2c/i2c-5/5-*            enable         0660    input    system
-/sys/devices/soc.0/78b9000.i2c/i2c-5/5-*            poll_delay     0660    input    system
-/sys/devices/soc.0/78b9000.i2c/i2c-5/5-*            enable_wakeup  0660    input    system
-/sys/devices/soc.0/78b9000.i2c/i2c-5/5-*            max_latency    0660    input    system
-/sys/devices/soc.0/78b9000.i2c/i2c-5/5-*            flush          0660    input    system
-/sys/devices/soc.0/78b9000.i2c/i2c-5/5-*            calibrate      0660    input    system
-
 # NFC
 /dev/pn544                0660   nfc        nfc
+
+# vm_bms
+/dev/battery_data         0660   system     system
 
 # Wlan
 /dev/wcnss_wlan           0660   system     system
@@ -147,5 +116,5 @@
 /dev/hbtp_input           0660   system     system
 /dev/hbtp_vm              0660   system     system
 
-# FRP
-/dev/block/bootdevice/by-name/config    0600   system     system
+# Add device block for FRP
+/dev/block/platform/soc.0/7824900.sdhci/by-name/config    0660   system     system
