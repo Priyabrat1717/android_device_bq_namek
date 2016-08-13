@@ -67,7 +67,6 @@ FEATURE_QCRIL_UIM_SAP_SERVER_MODE := true
 
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
-BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm8916
 
 # CMHW
 BOARD_HARDWARE_CLASS := device/bq/namek/cmhw/src
