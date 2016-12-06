@@ -34,7 +34,7 @@ TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/bq/common
+TARGET_KERNEL_SOURCE := kernel/bq/namek
 TARGET_KERNEL_CONFIG := cyanogenmod_namek_defconfig
 TARGET_KERNEL_ARCH := arm
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk
